@@ -4,7 +4,7 @@ End-to-End Machine Learning System for Cryptocurrency Trading
 
 # Project Overview
 
-This capstone project builds a full Buy/Sell/Hold classifier for cryptocurrency markets using real historical data from the Binance API. The system performs data ingestion, feature engineering, label creation, model training, evaluation, backtesting, and model deployment.
+This capstone project develops a comprehensive Buy/Sell/Hold classifier for cryptocurrency markets utilizing real historical data from the Binance API. The system performs data ingestion, feature engineering, label creation, model training, evaluation, backtesting, and model deployment.
 
 The goal is to simulate a realistic machine learning workflow used in algorithmic trading and quantitative finance.
 
