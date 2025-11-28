@@ -1,0 +1,119 @@
+# 🪙 Crypto Buy/Sell/Hold Classifier
+End-to-End Machine Learning System for Cryptocurrency Trading
+
+
+# Project Overview
+
+This capstone project builds a full Buy/Sell/Hold classifier for cryptocurrency markets using real historical data from the Binance API. The system performs data ingestion, feature engineering, label creation, model training, evaluation, backtesting, and model deployment.
+
+The goal is to simulate a realistic machine learning workflow used in algorithmic trading and quantitative finance.
+
+# Core Features
+1. Real Market Data Fetching
+
+Pulls OHLCV candlestick data from the Binance API.
+
+Supports multiple intervals (1 minute, 1 hour, 1 day).
+
+2. Data Cleaning & Preprocessing
+
+Handles missing data, outliers, and type conversions.
+
+Computes robust financial features:
+
+RSI (14)
+
+MACD (12/26/9)
+
+SMA 
+
+Bollinger Bands
+
+Rolling volatility
+
+Returns (1-day, 7-day)
+
+3. Label Generation
+
+Converts future price movements into:
+
+Buy
+
+Sell
+
+Hold
+
+Configurable thresholds allow fine-tuning signal sensitivity.
+
+4. ML Model Training
+
+Includes support for multiple classifiers:
+
+Logistic Regression
+
+Random Forest
+
+Gradient Boosting
+
+XGBoost
+
+Lightgbm
+
+Catboost
+
+Includes:
+
+Train/test/validation split
+
+Feature scaling
+
+Class balancing
+
+Hyperparameter tuning
+
+5. Evaluation & Backtesting
+
+Uses precision, recall, F1-score, and accuracy.
+
+Backtests predictions to simulate a trading strategy and compare returns to buy-and-hold.
+
+6. Model Deployment
+
+Serializes trained model using pickle/joblib.
+
+
+🧱 Project Architecture
+                   ┌───────────────────────────┐
+                   │     Binance API Fetch     │
+                   └─────────────┬─────────────┘
+                                 │
+                                 ▼
+                      ┌───────────────────┐
+                      │   Raw Data        │ 
+                      └─────────┬─────────┘
+                                │ Cleaning
+                                ▼
+                   ┌───────────────────────────┐
+                   │   Feature Engineering     │
+                   │ (Indicators, returns, etc)│
+                   └─────────────┬─────────────┘
+                                 │
+                                 ▼
+                        ┌─────────────┐
+                        │ Label Maker │
+                        └──────┬──────┘
+                               │
+                               ▼
+                     ┌───────────────────┐
+                     │   ML Model Train  │
+                     └─────────┬─────────┘
+                               │
+                               ▼
+                  ┌──────────────────────────────┐
+                  │ Evaluation + Backtesting     │
+                  └─────────────┬────────────────┘
+                                │
+                                ▼
+                        ┌────────────┐
+                        │ Deployment │
+                        └────────────┘
